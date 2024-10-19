@@ -1,0 +1,15 @@
+import Header from './header';  
+import Footer from './footer'; 
+import '../css/styles.css';
+
+const Layout = ({ children }) => {
+  return (
+    <div>
+      <Header />    
+      <>{children}</>  
+      <Footer />   
+    </div>
+  );
+};
+
+export default Layout;

@@ -1,6 +1,4 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import '../pages/css/main.css';
 import img1 from '../img/brecht-deboosere-9NPWmYOHtoU-unsplash.jpg';
 import img2 from '../img/giuseppe-argenziano-lTTQ1W_vvSI-unsplash.jpg';
 import img3 from '../img/jeffery-erhunse-6D2Lmtv_X8A-unsplash.jpg';

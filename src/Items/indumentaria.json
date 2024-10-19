@@ -1,0 +1,103 @@
+{
+    "sections": [
+      {
+        "id": "RemerasClasicas",
+        "items": [
+          {
+            "id": "divRemerasClasica1",
+            "image": "mohammad-faruque-0ZYPu-nLOwU-unsplash.jpg",
+            "alt": "Zapatilla",
+            "description": "Remera estilo clasico",
+            "type": "Remera"
+          },
+          {
+            "id": "divRemerasClasica2",
+            "image": "taylor-dG4Eb_oC5iM-unsplash.jpg",
+            "alt": "Zapatilla",
+            "description": "Remera estilo clasico",
+            "type": "Remera"
+          },
+          {
+            "id": "divRemerasClasica3",
+            "image": "quarry.jpg",
+            "alt": "Remera",
+            "description": "Remera estilo clasico",
+            "type": "Remera"
+          },
+          {
+            "id": "divRemerasClasica4",
+            "image": "Z4RYz52ljts-unsplash.jpg",
+            "alt": "Remera",
+            "description": "Camiseta Arsenal",
+            "type": "Remera"
+          }
+        ]
+      },
+      {
+        "id": "RemerasUrbanas",
+        "items": [
+          {
+            "id": "divRemerasUrbana1",
+            "image": "bastian-ignacio-vega-cani-9UAfLTqMoS0-unsplash.jpg",
+            "alt": "Zapatilla",
+            "description": "Remera estilo Urbanas",
+            "type": "Remera"
+          },
+          {
+            "id": "divRemerasUrbana2",
+            "image": "mikail-duran-Kv5WiqG_3NA-unsplash.jpg",
+            "alt": "Zapatilla",
+            "description": "Remera estilo Urbanas",
+            "type": "Remera"
+          },
+          {
+            "id": "divRemerasUrbana3",
+            "image": "mediamodifier-tT6k5S0fvxs-unsplash.jpg",
+            "alt": "Remera",
+            "description": "Remera estilo Urbanas",
+            "type": "Remera"
+          },
+          {
+            "id": "divRemerasUrbana4",
+            "image": "malcolm-lightbody-E4Kuj7GsBjg-unsplash.jpg",
+            "alt": "Remera",
+            "description": "Remera estilo Urbanas",
+            "type": "Remera"
+          }
+        ]
+      },
+      {
+        "id": "RemerasCasuales",
+        "items": [
+          {
+            "id": "divRemerasCasual1",
+            "image": "mediamodifier-tT6k5S0fvxs-unsplash.jpg",
+            "alt": "Zapatilla",
+            "description": "Remera estilo Casual",
+            "type": "Remera"
+          },
+          {
+            "id": "divRemerasCasual2",
+            "image": "taylor-dG4Eb_oC5iM-unsplash.jpg",
+            "alt": "Zapatilla",
+            "description": "Remera estilo Casual",
+            "type": "Remera"
+          },
+          {
+            "id": "divRemerasCasual3",
+            "image": "mediamodifier-fTDWpCxLA0k-unsplash.jpg",
+            "alt": "Remera",
+            "description": "Remera estilo Casual",
+            "type": "Remera"
+          },
+          {
+            "id": "divRemerasCasual4",
+            "image": "jacinto-diego-Groi0xH25-o-unsplash.jpg",
+            "alt": "Remera",
+            "description": "Remera estilo Casual",
+            "type": "Remera"
+          }
+        ]
+      }
+    ]
+  }

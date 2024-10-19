@@ -1,10 +1,4 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import '../pages/css/boxicons/css/boxicons.min.css';
-import '../pages/css/main.css';
-import '../pages/css/indumentaria.css';
-import '../pages/css/modalCarrito.css';
-import '../pages/css/clima.css';
 
 function NavBar() {
   return (

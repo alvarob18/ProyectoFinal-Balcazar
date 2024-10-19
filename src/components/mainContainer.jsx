@@ -1,6 +1,3 @@
-import React from 'react';
-import '../pages/css/main.css';
-
 function MainContainer(props) {
   return (
     <main className="main">

@@ -1,9 +1,3 @@
-import React from 'react';
-import '../pages/css/boxicons/css/boxicons.min.css';
-import '../pages/css/main.css';
-import '../pages/css/indumentaria.css';
-import '../pages/css/modalCarrito.css';
-import '../pages/css/clima.css';
 import img1 from '../img/marcel-schreiber-iZI5qcR7f8s-unsplash.jpg';
 import img2 from '../img/different_sports.jpg';
 import img3 from '../img/taylor-smith-aDZ5YIuedQg-unsplash.jpg';
