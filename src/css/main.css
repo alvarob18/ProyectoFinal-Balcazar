@@ -10,8 +10,8 @@ header nav ul li {
 }
 
 .carousel-item-height {
-  height: 600px; /* Ajusta este valor según tu preferencia */
-  object-fit: cover; /* Para que las imágenes se ajusten y mantengan su relación de aspecto */
+  height: 600px;
+  object-fit: cover;
 }
 
 body {
@@ -112,10 +112,10 @@ body main p span {
   margin-bottom: 100px;
 }
 .photo-grid img {
-  max-width: 100%; /* Ancho máximo del 100% del contenedor */
-  height: 350px; /* Altura ajustada automáticamente para mantener la proporción */
-  border: 3px solid transparent; /* Borde transparente por defecto */
-  transition: border-color 0.3s ease-in-out; /* Aplica una transición suave al color del borde */
+  max-width: 100%;
+  height: 350px; 
+  border: 3px solid transparent;
+  transition: border-color 0.3s ease-in-out; 
 }
 .photo-grid img:hover {
   border-color: black;
@@ -125,35 +125,41 @@ body main p span {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0; /* Elimina el margen superior del div */
+  margin-top: 0;
   margin-bottom: 20px;
 }
-
 .photo-grid-indumentaria {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 100px;
+  gap: 20px; 
+}
+.items-section-indumentaria {
+  flex: 1 1 calc(25% - 20px); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
 }
 .photo-grid-indumentaria .items-section-indumentaria img {
-  max-width: 100%; /* Ancho máximo del 100% del contenedor */
-  height: 350px; /* Altura ajustada automáticamente para mantener la proporción */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: auto;
+  width: 100%;
+  max-width: 150px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 .photo-grid-indumentaria .items-section-indumentaria img:hover {
   border-color: black;
 }
 .photo-grid-indumentaria img {
-  border: 3px solid transparent; /* Borde transparente por defecto */
-  transition: border-color 0.3s ease-in-out; /* Aplica una transición suave al color del borde */
+  border: 3px solid transparent; 
+  transition: border-color 0.3s ease-in-out; 
 }
-
+.item-description,
+.item-type,
+.item-stock {
+  margin: 5px 0;
+  text-align: center;
+}
 .photo-grid-zapatillas {
   display: flex;
   justify-content: center;
@@ -162,8 +168,8 @@ body main p span {
   margin-bottom: 50px;
 }
 .photo-grid-zapatillas .items-section-indumentaria img {
-  max-width: 100%; /* Ancho máximo del 100% del contenedor */
-  height: 350px; /* Altura ajustada automáticamente para mantener la proporción */
+  max-width: 100%;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,8 +181,8 @@ body main p span {
   border-color: black;
 }
 .photo-grid-zapatillas img {
-  border: 3px solid transparent; /* Borde transparente por defecto */
-  transition: border-color 0.3s ease-in-out; /* Aplica una transición suave al color del borde */
+  border: 3px solid transparent;
+  transition: border-color 0.3s ease-in-out;
 }
 
 .photo-futbol {
@@ -188,8 +194,8 @@ body main p span {
   margin-bottom: 100px;
 }
 .photo-futbol img {
-  max-width: 100%; /* Ancho máximo del 100% del contenedor */
-  height: 350px; /* Altura ajustada automáticamente para mantener la proporción */
+  max-width: 100%;
+  height: 350px;
 }
 
 .items {
@@ -201,14 +207,14 @@ body main p span {
   display: inline-block;
   vertical-align: top;
   text-align: center;
-  margin: 10px; /* Espacio entre cada bloque de imagen y párrafo */
+  margin: 10px;
 }
 .items img {
   width: 300px;
 }
 .items p {
   width: 200px;
-  margin-top: 10px; /* Espacio entre la imagen y el párrafo */
+  margin-top: 10px;
 }
 
 .qs-items {
@@ -228,9 +234,31 @@ footer {
   margin-right: 0px;
   padding-bottom: 10px;
 }
-
 .footer-copyright {
   color: whitesmoke;
+}
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.item-quantity {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 30px;
+}
+.btn-cart {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.btn-cart:hover {
+  background-color: #0056b3;
 }
 
 @media (min-width: 992px) {
@@ -271,11 +299,11 @@ footer {
     padding: 5px;
   }
   .grid-item img {
-    transition: transform 0.3s ease-in-out; /* Aplica una transición suave */
-    position: relative; /* Asegura que la posición absoluta de la superposición se base en la imagen */
+    transition: transform 0.3s ease-in-out;
+    position: relative; 
   }
   .grid-item img:hover {
-    transform: scale(1.1); /* Escala la imagen al 110% del tamaño original */
+    transform: scale(1.1);
   }
   footer div img {
     width: 100%;
@@ -325,8 +353,8 @@ footer {
     padding-right: 20px;
   }
   .photo-futbol img {
-    max-width: 50%; /* Ancho máximo del 100% del contenedor */
-    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    max-width: 50%;
+    height: auto; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -334,17 +362,26 @@ footer {
     margin: auto;
   }
   .photo-grid .items-section img {
-    max-width: 50%; /* Ancho máximo del 100% del contenedor */
-    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    max-width: 50%; 
+    height: auto; 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: auto;
+    margin: auto; 
+  }
+  .photo-grid-indumentaria .items-section-indumentaria,
+  .photo-grid-zapatillas .items-section-indumentaria,
+  .photo-grid .items-section {
+    flex: 1 1 100%; 
+    max-width: 100%; 
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
   }
   .photo-grid-indumentaria .items-section-indumentaria img {
-    max-width: 50%; /* Ancho máximo del 100% del contenedor */
-    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    max-width: 50%; 
+    height: auto; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -352,8 +389,8 @@ footer {
     margin: auto;
   }
   .photo-grid-zapatillas .items-section-indumentaria img {
-    max-width: 50%; /* Ancho máximo del 100% del contenedor */
-    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    max-width: 50%; 
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -591,5 +628,3 @@ footer {
     justify-content: flex-start;
   }
 }
-
-/*# sourceMappingURL=main.css.map */
