@@ -6,11 +6,28 @@ import BBDD from '../config/firebase';
 import Swal from 'sweetalert2';
 
 const Checkout = () => {
-  const { cartItems, clearCart } = useCart();
+  const { cartItems, clearCart, updateQuantity, removeFromCart } = useCart();
   const navigate = useNavigate();
 
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+  };
+
+  const handleIncrement = (item, parentId) => {
+    if (item.quantity < item.stock) {
+      updateQuantity(item.id, item.quantity + 1, parentId);
+    } else {
+      console.warn('No puede agregar más de este producto: Stock limitado.');
+    }
+  };
+
+  const handleDecrement = (item, parentId) => {
+    if (item.quantity > 1) {
+      updateQuantity(item.id, item.quantity - 1, parentId);
+    } else {
+      console.warn('Cantidad mínima alcanzada. Removiendo ítem.');
+      removeFromCart(item.id, parentId);
+    }
   };
 
   const handleCheckout = async () => {
@@ -85,7 +102,13 @@ const Checkout = () => {
                 <img src={`../src/assets/images/${item.image}`} alt={item.alt} className="checkout-item-image" />
                 <div className="checkout-item-details">
                   <p>{item.name}</p>
-                  <p>Cantidad: {item.quantity}</p>
+                  <p>
+                    <div className="quantity-controls">
+                      <button onClick={() => handleDecrement(item, item.parentId)} className="btn-cart">-</button>
+                      <span className="quantity-display">{item.quantity}</span>
+                      <button onClick={() => handleIncrement(item, item.parentId)} className="btn-cart">+</button>
+                    </div>
+                  </p>
                   <p>Precio: ${item.price}</p>
                   <p>Total: ${(item.price * item.quantity).toFixed(2)}</p>
                 </div>

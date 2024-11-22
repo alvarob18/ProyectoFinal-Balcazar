@@ -1,6 +1,44 @@
 import React from 'react';
 
-const Cart = ({ cartItems, updateQuantity, removeItem }) => {
+const Cart = ({ cartItems, updateQuantity, removeItem, addToCart }) => {
+  const handleIncrement = (item, parentId) => {
+    const cartItem = cartItems.find((cartItem) => cartItem.id === item.id);
+
+    if (cartItem) {
+      if (cartItem.quantity < item.stock) {
+        updateQuantity(item.id, cartItem.quantity + 1, parentId);
+      } else {
+        console.warn('No puedes agregar más de este producto: Stock limitado.');
+      }
+    } else {
+      if (item.stock > 0) {
+        addToCart({ ...item, quantity: 1, parentId });
+      } else {
+        console.warn('El producto está fuera de stock.');
+      }
+    }
+
+    console.log('Stock disponible:', item.stock);
+    console.log('Cantidad actual en carrito:', cartItem ? cartItem.quantity : 0);
+  };
+
+  const handleDecrement = (item, parentId) => {
+    const cartItem = cartItems.find((cartItem) => cartItem.id === item.id);
+
+    if (cartItem) {
+      if (cartItem.quantity > 1) {
+        updateQuantity(item.id, cartItem.quantity - 1, parentId);
+      } else {
+        console.warn('Cantidad mínima alcanzada. Removiendo ítem.');
+        removeItem(item.id, parentId); // Elimina el ítem si la cantidad llega a 0
+      }
+    } else {
+      console.warn('El producto no está en el carrito.');
+    }
+
+    console.log('Cantidad actual en carrito:', cartItem ? cartItem.quantity : 0);
+  };
+
   return (
     <div className="cart-container">
       <h2>Carrito de Compras</h2>
@@ -15,17 +53,15 @@ const Cart = ({ cartItems, updateQuantity, removeItem }) => {
               <p className="cart-item-price">Precio: ${item.price}</p>
               <div className="cart-controls">
                 <button
-                  onClick={() => updateQuantity(item.id, item.quantity - 1, item.parentId)}
+                  onClick={() => handleDecrement(item, item.parentId)}
                   className="btn-cart"
-                  disabled={item.quantity <= 1}
                 >
                   -
                 </button>
                 <span className="cart-item-quantity">{item.quantity}</span>
                 <button
-                  onClick={() => updateQuantity(item.id, item.quantity + 1, item.parentId)}
+                  onClick={() => handleIncrement(item, item.parentId)}
                   className="btn-cart"
-                  disabled={item.quantity >= item.stock}
                 >
                   +
                 </button>

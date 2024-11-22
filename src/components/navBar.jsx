@@ -3,16 +3,25 @@ import { useState } from 'react';
 import { useCart } from '../config/CartContext';
 
 function NavBar() {
-  const { cartItems, updateQuantity, removeFromCart } = useCart();
+  const { cartItems, updateQuantity, removeFromCart, addToCart } = useCart();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
   const toggleDropdown = () => setDropdownOpen(!isDropdownOpen);
 
+  const handleIncrement = (item) => {
+    if (item.quantity < item.stock) {
+      updateQuantity(item.id, item.quantity + 1, item.parentId);
+    } else {
+      console.warn('No puede agregar más de este producto: Stock limitado.');
+    }
+  };
+
   const handleDecrement = (item) => {
     if (item.quantity > 1) {
-      updateQuantity(item.id, item.quantity - 1);
+      updateQuantity(item.id, item.quantity - 1, item.parentId);
     } else {
-      removeFromCart(item.id);
+      console.warn('Cantidad mínima alcanzada. Removiendo ítem.');
+      removeFromCart(item.id, item.parentId);
     }
   };
 
@@ -68,7 +77,7 @@ function NavBar() {
                             <div className="cart-item-controls">
                               <button onClick={() => handleDecrement(item)} className="btn-cart">-</button>
                               <span className="quantity-display">{item.quantity}</span>
-                              <button onClick={() => updateQuantity(item.id, item.quantity + 1)} className="btn-cart">+</button>
+                              <button onClick={() => handleIncrement(item)} className="btn-cart">+</button>
                             </div>
                           </div>
                         </div>
